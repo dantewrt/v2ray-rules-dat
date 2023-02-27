@@ -1,8 +1,6 @@
 name: Build V2Ray rules dat files
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "20 04 * * FRI"
   push:
     branches:
       - master
@@ -20,7 +18,7 @@ jobs:
           check-latest: true
       
       - name: Set timezone to WIB Jakarta
-        uses: szenius/set-timezone@v1.0
+        uses: szenius/set-timezone@v1.1
         with:
           timezoneLinux: "Asia/Jakarta"
           timezoneMacos: "Asia/Jakarta"
