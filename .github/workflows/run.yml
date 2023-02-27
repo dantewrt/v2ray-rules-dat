@@ -265,16 +265,3 @@ jobs:
           keep_latest: 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Trigger Synch sing-box-geo
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GHA_WORKFLOW_TRIGGER }}
-          script: |
-            const result = await github.rest.actions.createWorkflowDispatch({
-              owner: 'malikshi',
-              repo: 'sing-box-geo',
-              workflow_id: 'release.yaml',
-              ref: 'master'
-            })
-            console.log(result)
