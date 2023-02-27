@@ -1,0 +1,412 @@
+include:iqiyi
+include:abema
+include:anime
+include:archiveofourown
+include:attwatchtv
+include:bahamut
+include:bandcamp
+include:dandanzan
+include:dazn
+include:deviantart
+include:discoveryplus
+include:dlsite
+include:goodreads
+include:hamivideo
+include:hulu
+include:imdb
+include:kingkonglive
+include:kkbox
+include:manhuagui
+include:mudvod
+include:mytvsuper
+include:niconico
+include:iqiyi
+include:abema
+include:archiveofourown
+include:attwatchtv
+include:bahamut
+include:bandcamp
+include:dandanzan
+include:dazn
+include:deviantart
+include:discoveryplus
+include:dlsite
+include:goodreads
+include:hamivideo
+include:hulu
+include:imdb
+include:kingkonglive
+include:kkbox
+include:mytvsuper
+include:niconico
+include:pixiv
+include:pocketcasts
+include:primevideo
+include:roku
+include:sling
+include:sonypictures
+include:soundcloud
+#include:spotify
+include:subscene
+include:tidal
+include:tmdb
+include:tvdb
+include:tver
+include:twitch
+include:vimeo
+include:visualarts
+include:volmoe
+include:wwe
+include:youtube
+include:zeetv
+iq.com
+
+# > Tencent Video
+v.smtcdns.com
+vv.video.qq.com
+
+# > NIMO TV
+ylog.nimo.tv
+api.nimo.tv
+metric.nimo.tv
+wsapi.master.live
+img.nimo.tv
+article.nimo.tv
+txpic.vod.nimo.tv
+sail-rank.nimo.tv
+home-cf.nimo.tv
+m.nimo.tv
+udbdf-v2.nimo.tv
+api-cf.nimo.tv
+wspic.vod.nimo.tv
+follow.nimo.tv
+follow-cf-dynamic.nimo.tv
+statwup.nimo.tv
+nimo.tv
+
+# > Discovery Plus
+content-ause1-ur-discovery1.uplynk.com
+disco-api.com
+discoveryplus.com
+fwmrm.net
+getblueshift.com
+litix.io
+mobile-collector.newrelic.com
+uplynk.com
+
+# > AbemaTV
+abema.io
+abema.tv
+ameba.jp
+hayabusa.io
+abematv.akamaized.net
+
+# > Apple API
+aaplimg.com
+apple.co
+apple.com
+apple-cloudkit.com
+apple-mapkit.com
+appsto.re
+cdn-apple.com
+icloud.com
+icloud-content.com
+itunes.com
+me.com
+mzstatic.com
+
+# > Apple News
+apple.news
+  
+# > Apple TV
+tv.apple.com
+np-edge.itunes.apple.com
+play-edge.itunes.apple.com
+  
+# > BBC iPlayer
+bbc.co
+bbc.co.uk
+bbc.com
+bbcfmt.hs.llnwd.net
+bbci.co
+bbci.co.uk
+bidi.net.uk  
+aod-dash-uk-live.akamaized.net
+aod-hls-uk-live.akamaized.net
+vod-dash-uk-live.akamaized.net
+vod-thumb-uk-live.akamaized.net
+bbcfmt
+
+# > encoreTVB
+encoretvb.com
+content.jwplatform.com
+videos-f.jwpsrv.com
+  
+# > Fox+ (HK|TW|SG)
+foxplus.com
+theplatform.com
+  
+# > Fox Now
+fox.com
+foxdcg.com
+  
+# > Hulu
+cws-hulu.conviva.com
+hulu.com
+hulu.hb.omtrdc.net
+hulu.sc.omtrdc.net
+huluad.com
+huluim.com
+hulustream.com
+  
+# > Hulu(フールー)
+happyon.jp
+hulu.jp
+prod.hjholdings.tv
+streaks.jp
+yb.uncn.jp
+  
+# > Japonx
+japonx
+japronx
+japonx.com
+japonx.tv
+japonx.net
+japonx.vip
+japronx.com
+japronx.tv
+japronx.net
+japronx.vip
+
+# > JOOX
+joox.com
+joox
+jooxweb-api
+
+# > KKBOX
+kkbox.com
+kkbox.com.tw
+kfs.io
+
+# > KKTV
+kktv.me
+kktv.com.tw
+kktv-theater.kk.stream
+  
+# > Letv
+api.mob.app.letv.com
+
+# > Line TV
+linetv.tw
+profile.line-scdn.net
+d3c7rimkq79yfu.cloudfront.net
+  
+# > myTV_SUPER
+mytvsuper.com
+tvb.com
+  
+# > Netease Music
+music.126.net
+api.iplay.163.com
+hz.netease.com
+mam.netease.com
+music.163.com
+
+# > Pandora
+pandora.com
+
+# > Resso
+resso.app
+resso.com
+
+# > SoundCloud
+sndcdn.com
+soundcloud.com
+
+
+# > Anime
+anoboy.watch
+neonime.co
+gomunime.is
+9anime.cz
+9anime.id
+9anime.to
+9anime.ws
+animedao-tv.com
+crunchyroll.com
+funimation.com
+gogo-load.com
+gogoanime.vc
+gogoanime.wiki
+gogocdn.net
+hidive.com
+vrv.co
+animedao-tv.com
+animekayo.com
+kayoanime.com
+9anime-tv.com
+kissanime.ru
+animedao.com
+animelab.com
+anime-planet.com
+viz.com
+animeheaven.ru
+animefreak.tv
+contv.com
+asiancrush.com
+animetake.tv
+aniplus-asia.com
+tubi.tv
+midnightpulp.com
+animebee.to
+animepahe
+gogoplay
+gogoanime
+9anime
+anoboy
+
+# > Niconiconic
+dmc.nico
+nicodic.jp
+nicomanga.jp
+niconico.com
+nicoseiga.jp
+nicovideo.jp
+nimg.jp
+simg.jp
+socdm.com
+
+# > Acast
+acast.com
+
+# > Amazon Video
+aiv-cdn.net
+aiv-delivery.net
+pv-cdn.net
+atv-ext-eu.amazon.com
+atv-ext-fe.amazon.com
+atv-ext.amazon.com
+atv-ps-eu.amazon.co.uk
+atv-ps-eu.amazon.com
+atv-ps-fe.amazon.co.jp
+atv-ps-fe.amazon.com
+atv-ps.amazon.com
+
+# > Crave
+9c9media.ca
+9c9media.com
+crave.ca
+
+# > Dailymotion
+dai.ly
+dailymotion.com
+dailymotionadvertising.com
+dmcdn.net
+dmxleo.com
+
+# > Deezer
+deezer.com
+dzcdn.net
+e28200.a.akamaiedge.net
+
+# > Hotdog radio
+hotdogradio.com
+
+# > IheartRadio
+937theriver.com
+iheart.com
+iheart.mx
+iheartmedia.com
+iheartradio.ca
+iheartradio.co.nz
+iheartradio.com
+ihrdev.com
+ihrhls.com
+ihrint.com
+ihrstage.com
+
+# > IQiyi
+iq.com
+iqiyi.com
+iqiyipic.com
+pps.tv
+ppstream.com
+qiyi.com
+qiyipic.com
+qy.net
+
+# > LastFM
+last.fm
+
+# > OCS
+ocs.fr
+ocsdomain.com
+
+# > Pandora
+p-cdn.com
+p-cdn.us
+pandora.com
+savagebeast.com
+
+# > Peacock TV
+peacock.com
+peacocktv.com
+
+# > Plex
+plex.bz
+plex.direct
+plex.tv
+plexapp.com
+
+# > SomaFM
+somafm.com
+
+# > Streamable
+streamable.com
+
+# > Tubi
+adrise.tv
+tubi.io
+tubi.video
+tubitv.com
+
+# > TuneIn
+radiotime.com
+tunein.com
+tunenet.io
+
+# > Twitch TV
+ext-twitch.tv
+jtvnw.net
+live-video.net
+ttvnw.net
+twitch.okta.com
+twitch.tv
+twitchcdn.net
+twitchsvc.net
+
+# > Vevo
+vevo.com
+vevodev.com
+vevoprd.com
+vevostg.com
+
+# > Vimeo
+vimeo.com
+vimeocdn.com
+
+# > VRV
+vrv.co
+
+# > Vudu
+vudu.com
+
+# > Bigo TV
+bigo.sg
+bigo.tv
+cube.tv
+hzmk.site
+like.video
+likeevideo.com
+bigo
+likee

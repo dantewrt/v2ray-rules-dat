@@ -1,0 +1,376 @@
+include:category-games
+include:discord
+include:netease
+
+# Mobile Legends
+mobilelegends.com
+mobilelegends.ca
+mobilelegends.cn
+mobilelegends.co.kr
+mobilelegends.info
+mobilelegends.kr
+mobilelegends.net
+mobilelegends.org
+mobilelegends.com.cn
+youngjoygame.com
+yuanzhanapp.com
+aihelp.net
+tnc16-alisg.isnssdk.com
+gplog-sg.byteoversea.com
+xlog.byteoversea.com
+
+# FreeFire
+freefire
+
+# PUBG
+pubgmobile.com
+igamecj.com
+broker.amsoveasea.com
+gjacky.com
+sg.tdatamaster.com
+file-igamecj.akamaized.net
+tencentgames.helpshift.com
+igamecj
+
+# Roblox
+roblox.com
+rbxcdn.com
+rbxtrk.com
+roblox.plus
+robloxinc.s.llnwi.net
+6850.f.akamaiedge.net
+roblox.ssl.zendesk.com
+
+# > Agar
+agar.io
+
+# > ark
+arkdedicated.com
+playark.com
+
+# > bigfishgames
+bigfishgames.com
+
+# > blizzard
+battle.net
+battlenet.com.cn
+blizzard.cn
+blizzard.com
+blizzardgames.cn
+blz-contentstack.com
+blzstatic.cn
+bnet.163.com
+bnet.cn
+
+# > 2kGaming
+2k.com
+2kcoretech.online
+2ksports.com
+
+# > CoD
+callofduty.com
+callofdutyleague.com
+
+# > Candy Crush
+candycrush.king.com
+candycrush4.king.com
+candycrushsoda.king.com
+candycrushsodamobile.king.com
+
+# > CoC
+clashofclans.com
+
+# > Clash Royal
+clashroyale.com
+clashroyaleapp.com
+
+# > cpmstar
+cpmstar.com
+
+# > EA Games
+ea.com
+eamobile.com
+easports.com
+friends-prod.us-east-1.elasticbeanstalk.com
+nearpolar.com
+swtor.com
+tnt-ea.com
+
+# > Epic Games
+epicgames.com
+epicgames.dev
+epicgames.net
+unrealengine.com
+
+# > FIFA
+content.easports.com
+service.easports.com
+fifa-online.easports.com
+fifa.stats.gameservices.ea.com
+-prod-gen4-app-
+-prd-mp-blaze-
+fifa23
+
+# > forgeofempires
+forgeofempires.com
+
+# > gameloft
+gameloft.com
+
+# > GoG
+gog-statics.com
+gog.com
+gogalaxy.com
+gogcdn.net
+
+# > haydaygame
+haydaygame.com
+
+# > king games
+king.com
+midasplayer.com
+
+# > madden by EA
+madden20.service.easports.com
+madden21.service.easports.com
+madden22.service.easports.com
+
+# > microsoft games
+microsoftcasualgames.com
+msgamestudios.com
+
+# > Minecraft
+minecraft-services.net
+minecraft.net
+minecraftprod.rtep.msgamestudios.com
+minecraftservices.com
+mojang.com
+
+# > Miniclip
+miniclip.com
+
+# > Mixer
+mixer.com
+
+# > NHL
+nhl21-prod-app-01.ea.com
+nhl21-prod-app-02.ea.com
+nhl21-prod-app-03.ea.com
+nhl21-prod-app-04.ea.com
+nhl21-prod-app-05.ea.com
+nhl21-prod-app-06.ea.com
+nhl21-prod-app-07.ea.com
+nhl21-prod-app-08.ea.com
+nhl21-prod-app-09.ea.com
+nhl21.content.easports.com
+nhl21.service.easports.com
+nhl22.content.easports.com
+nhl22.service.easports.com
+
+# > Pokemon Go
+nianticlabs.com
+pokemongolive.com
+full:niantic.helpshift.com
+
+# > Nintendo
+nintendo-europe.com
+nintendo.be
+nintendo.co.jp
+nintendo.co.uk
+nintendo.com
+nintendo.com.102.112.2o7.net
+nintendo.com.au
+nintendo.de
+nintendo.es
+nintendo.eu
+nintendo.fr
+nintendo.it
+nintendo.jp
+nintendo.net
+nintendo.nl
+nintendoco.s.llnwi.net
+nintendoswitch.cn
+nintendowifi.net
+
+# > OP
+op.gg
+
+# > Origin
+origin.com
+
+# > Playrix
+playrix.com
+playrix.helpshift.com
+
+# > Playstation
+playstation.com
+playstation.net
+sonyentertainmentnetwork.com
+
+# > Riot Games
+leagueoflegends.com
+lolstatic.com
+rgpub.io
+riotcdn.com
+riotcdn.net
+riotgames.com
+
+# > Rockstar
+rockstargames.com
+
+# > Steam
+s.team
+steam-chat.com
+steamchina.com
+steamcommunity.com
+steamcontent.com
+steamgames.com
+steampipe.akamaized.net
+steampowered.com
+steampowered.com.8686c.com
+steamstatic.com
+steamstatic.com.8686c.com
+steamusercontent.com
+valve.net
+valvesoftware.com
+
+# > Supercell
+supercell.com
+supercell.net
+supercell.helpshift.com
+
+# > take2games
+take2games.com
+
+# > Ubisoft
+ubi.com
+ubisoft.com
+ubisoft.org
+ubisoftconnect.com
+
+# > Unity3d
+unity3d.com
+
+# > War Gaming
+wargaming.com
+wargaming.net
+worldoftanks.com
+
+# > X.D. Global
+xdg.com
+
+# > Yongshi Games
+yongshigame.com
+
+# > YoStar
+yo-star.com
+yostar.store
+yostarplat.com
+
+# > Xbox
+xbox.com
+gamepass.com
+xboxab.com
+xboxab.net
+xboxlive.com
+xboxservices.com
+
+# > Zynga
+zynga.com
+zynga.my
+zyngagames.com
+zyngapoker.com
+zyngasupport.helpshift.com
+
+# > Bleach ES
+vsplay.com
+efun.com
+efunen.com
+
+# > Apex Legends Mobile
+tdm.mgapex.com
+download.2.707369824.dmp.mgapex.com
+bugly-android.mgapex.com
+itop.mgapex.com
+tgpa.mgapex.com
+cloudctrl.mgapex.com
+file.mgapex.com
+ire.csoversea.mgapex.com
+voice-sg.mgapex.com
+pay.mgapex.com
+lobby.mgapex.com
+apex.go.sonobi.com
+mgapex.com
+devmgapex.com
+listdl.com
+awsglobalaccelerator.com
+mgapex
+devmgapex
+
+# > Konami
+konami.net
+konami
+applilink.jp
+
+# > Growtopia
+growtopia1.com
+growtopia2.com
+growtopiagame.com
+growtopia
+
+# > Genshin Impact
+genshinimpact.com
+honkaiimpact3.com
+honkaistarrail.com
+hoyo.link
+hoyolab.com
+hoyoverse.com
+n0vadesktop.com
+mihoyo.com
+genshinimpact
+honkaiimpact3
+mihoyo
+
+# Stumble Guys
+kitkagames.com
+exitgames.com
+ns.exitgames.com
+stumblepremiumlive.kitkagames.com
+
+# > PointBlank PC
+pointblank.id
+zepetto.com
+
+# > Idol Party
+changwutuan.com
+170u.com
+
+# > Tower of Fantasy
+intlgame.com
+toweroffantasy-global.com
+centauriglobal.com
+api.globalgme.com
+intlgame
+
+# > Auto Chess
+dragonest.com
+yeshen.com
+xingzheai.cn
+
+# > CoDM (com.garena.game.codm)
+codm.garena.com
+connect.garena.com
+msdk.garena.com
+gxx.garenanow.com
+cdn.wetest.qq.com
+sg.voice.gcloudcs.com
+gcloudcs
+codm
+
+# > Anti Cheat Expert
+anticheatexpert.com
+asia.csoversea.mbgame.anticheatexpert.com
+anticheatexpert
+
+# > Arknights (com.YoStarEN.Arknights)
+arknights.global
