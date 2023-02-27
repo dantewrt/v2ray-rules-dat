@@ -47,14 +47,14 @@ jobs:
           echo "OISD_NSFW=https://hosts.oisd.nl/nsfw/" >> $GITHUB_ENV
           echo "DOH_DNS=https://raw.githubusercontent.com/dibdot/DoH-IP-blocklists/master/doh-domains.txt" >> $GITHUB_ENV
           echo "RULE_ADS=https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt" >> $GITHUB_ENV
-          echo "RULE_GAME=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_gaming.txt" >> $GITHUB_ENV
-          echo "RULE_INDO=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_indo.txt" >> $GITHUB_ENV
-          echo "RULE_PS=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_playstore.txt" >> $GITHUB_ENV
-          echo "RULE_SOSMED=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_sosmed.txt" >> $GITHUB_ENV
-          echo "RULE_STREAMING=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_streaming.txt" >> $GITHUB_ENV
-          echo "RULE_UMUM=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_umum.txt" >> $GITHUB_ENV
-          echo "RULE_IPCHECK=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_ipcheck.txt" >> $GITHUB_ENV
-          echo "RULE_VIDCONFERENCE=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule-videoconference.txt" >> $GITHUB_ENV
+          echo "RULE_GAME=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_gaming.txt" >> $GITHUB_ENV
+          echo "RULE_INDO=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_indo.txt" >> $GITHUB_ENV
+          echo "RULE_PS=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_playstore.txt" >> $GITHUB_ENV
+          echo "RULE_SOSMED=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_sosmed.txt" >> $GITHUB_ENV
+          echo "RULE_STREAMING=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_streaming.txt" >> $GITHUB_ENV
+          echo "RULE_UMUM=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_umum.txt" >> $GITHUB_ENV
+          echo "RULE_IPCHECK=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ipcheck.txt" >> $GITHUB_ENV
+          echo "RULE_VIDCONFERENCE=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule-videoconference.txt" >> $GITHUB_ENV
           echo "MALICIOUS_HOST=https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_light.txt" >> $GITHUB_ENV
         shell: bash
 
@@ -223,9 +223,9 @@ jobs:
           install -Dp ./geoip.dat.sha256sum ./publish/geoip.dat.sha256sum
           install -Dp ./custom/publish/geosite.dat ./publish/geosite.dat
           cd ./publish || exit 1
-          zip iptunnels-geosite.zip geoip.dat geosite.dat
+          zip dantewrt-geosite.zip geoip.dat geosite.dat
           sha256sum geosite.dat > geosite.dat.sha256sum
-          sha256sum iptunnels-geosite.zip > iptunnels-geosite.zip.sha256sum
+          sha256sum dantewrt-geosite.zip > dantewrt-geosite.zip.sha256sum
 
       - name: Release and upload assets
         uses: softprops/action-gh-release@v0.1.15
@@ -261,7 +261,7 @@ jobs:
       - name: Delete Old Release
         uses: dev-drprasad/delete-older-releases@v0.2.0
         with:
-          repo: malikshi/v2ray-rules-dat
+          repo: dantewrt/v2ray-rules-dat
           keep_latest: 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
