@@ -257,11 +257,3 @@ jobs:
           for file in $(ls); do
             curl -i "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${file}"
           done
-
-      - name: Delete Old Release
-        uses: dev-drprasad/delete-older-releases@v0.2.0
-        with:
-          repo: dantewrt/v2ray-rules-dat
-          keep_latest: 1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
