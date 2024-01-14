@@ -28,20 +28,20 @@ jobs:
           echo "OISD_NSFW=https://nsfw.oisd.nl/dnsmasq" >> $GITHUB_ENV
           echo "DOH_DNS=https://raw.githubusercontent.com/dibdot/DoH-IP-blocklists/master/doh-domains.txt" >> $GITHUB_ENV
           echo "RULE_ADS=https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt" >> $GITHUB_ENV
-          echo "RULE_ADS_EXTENDED=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_ads.txt" >> $GITHUB_ENV
-          echo "RULE_GAME=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_gaming.txt" >> $GITHUB_ENV
-          echo "RULE_INDO=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_indo.txt" >> $GITHUB_ENV
-          echo "RULE_PS=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_playstore.txt" >> $GITHUB_ENV
-          echo "RULE_SOSMED=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_sosmed.txt" >> $GITHUB_ENV
-          echo "RULE_STREAMING=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_streaming.txt" >> $GITHUB_ENV
-          echo "RULE_UMUM=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_umum.txt" >> $GITHUB_ENV
-          echo "RULE_IPCHECK=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_ipcheck.txt" >> $GITHUB_ENV
-          echo "RULE_VIDCONFERENCE=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_videoconference.txt" >> $GITHUB_ENV
-          echo "URLTEST=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/urltest.txt" >> $GITHUB_ENV
-          echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_speedtest.txt" >> $GITHUB_ENV
+          echo "RULE_ADS_EXTENDED=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ads.txt" >> $GITHUB_ENV
+          echo "RULE_GAME=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_gaming.txt" >> $GITHUB_ENV
+          echo "RULE_INDO=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_indo.txt" >> $GITHUB_ENV
+          echo "RULE_PS=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_playstore.txt" >> $GITHUB_ENV
+          echo "RULE_SOSMED=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_sosmed.txt" >> $GITHUB_ENV
+          echo "RULE_STREAMING=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_streaming.txt" >> $GITHUB_ENV
+          echo "RULE_UMUM=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_umum.txt" >> $GITHUB_ENV
+          echo "RULE_IPCHECK=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ipcheck.txt" >> $GITHUB_ENV
+          echo "RULE_VIDCONFERENCE=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_videoconference.txt" >> $GITHUB_ENV
+          echo "URLTEST=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/urltest.txt" >> $GITHUB_ENV
+          echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_speedtest.txt" >> $GITHUB_ENV
           echo "MALICIOUS_HOST=https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_light.txt" >> $GITHUB_ENV
-          echo "RULE_BANK_ID=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
-          echo "RULE_ECOMMERCE=https://raw.githubusercontent.com/rfxcll/v2ray-rules-dat/rule/rule_ecommerce.txt" >> $GITHUB_ENV
+          echo "RULE_BANK_ID=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
+          echo "RULE_ECOMMERCE=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ecommerce.txt" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout Loyalsoldier/domain-list-custom
@@ -163,7 +163,7 @@ jobs:
       - name: Delete Old Release
         uses: dev-drprasad/delete-older-releases@v0.2.1
         with:
-          repo: rfxcll/v2ray-rules-dat
+          repo: dantewrt/v2ray-rules-dat
           keep_latest: 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
