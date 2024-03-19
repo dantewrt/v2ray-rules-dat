@@ -189,7 +189,6 @@ keyword:grab
 keyword:grabtaxi
 
 # > LIST Domain tLD Indo & GEOIP INDO
-id
 co.id
 ac.id
 or.id
