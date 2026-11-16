@@ -1,0 +1,68 @@
+include:line
+include:tiktok
+include:twitter
+include:telegram
+include:category-forums
+include:vk
+include:pinterest
+include:linkedin
+include:flickr
+include:douyu
+
+# > Meta but not include WhatsApp
+include:facebook
+include:facebook-dev
+include:instagram
+include:messenger
+include:oculus
+include:threads
+meta.ai
+meta.com
+
+# > Badoo
+badoo.app
+badoo.com
+badoo.com.ru
+badoocdn.com
+bumble.com
+
+# > Bitmoji
+bitmoji.com
+
+# > Douyin
+douyin.com
+douyincdn.com
+douyinliving.com
+douyinpic.com
+douyinstatic.com
+douyinvod.com
+
+# > Kwai
+kwai-pro.com
+kwai.com
+kwai.net
+kwaicdn.com
+helo.com
+snackvideo.in
+snackvideo.com
+uvfuns.com
+myqcloud.com
+
+# > okcupid
+okcupid.com
+
+# > openweb
+openweb.com
+spot.im
+
+# > Tieba
+tieba.baidu.com
+tieba.com
+
+# > Tinder
+gotinder.com
+tinder.com
+tindersparks.com
+
+# > Tuenti
+tuenti.com

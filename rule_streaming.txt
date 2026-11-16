@@ -1,0 +1,313 @@
+include:abema
+include:archiveofourown
+include:attwatchtv
+include:bahamut
+include:bandcamp
+include:dandanzan
+include:dazn
+include:deviantart
+include:discoveryplus
+include:dlsite
+include:goodreads
+include:hamivideo
+include:hulu
+include:imdb
+include:iqiyi
+include:kingkonglive
+include:kkbox
+include:mytvsuper
+include:niconico
+include:pixiv
+include:plutotv
+include:pocketcasts
+include:primevideo
+include:roku
+include:rumble
+include:sling
+include:sonypictures
+include:soundcloud
+include:spotify
+include:subscene
+include:tidal
+include:tmdb
+include:tvdb
+include:tver
+include:twitch
+include:vimeo
+include:visualarts
+include:volmoe
+include:wwe
+include:youku
+include:youtube
+include:zeetv
+
+# > NIMO TV
+nimo.tv
+
+# > Discovery Plus
+disco-api.com
+discoveryplus.com
+fwmrm.net
+getblueshift.com
+litix.io
+uplynk.com
+
+# > Apple API
+aaplimg.com
+apple.co
+apple.com
+apple-cloudkit.com
+apple-mapkit.com
+appsto.re
+cdn-apple.com
+icloud.com
+icloud-content.com
+itunes.com
+me.com
+mzstatic.com
+
+# > Apple News
+apple.news
+  
+# > Apple TV
+tv.apple.com
+full:np-edge.itunes.apple.com
+full:play-edge.itunes.apple.com
+  
+# > BBC iPlayer
+bbc.co
+bbc.co.uk
+bbc.com
+bbcfmt.hs.llnwd.net
+bbci.co
+bbci.co.uk
+bidi.net.uk
+full:aod-dash-uk-live.akamaized.net
+full:aod-hls-uk-live.akamaized.net
+full:vod-dash-uk-live.akamaized.net
+full:vod-thumb-uk-live.akamaized.net
+keyword:bbcfmt
+
+# > encoreTVB
+encoretvb.com
+full:content.jwplatform.com
+full:videos-f.jwpsrv.com
+  
+# > Hulu(フールー)
+happyon.jp
+streaks.jp
+yb.uncn.jp
+  
+# > Japonx
+japonx.com
+japonx.tv
+japonx.net
+japonx.vip
+japronx.com
+japronx.tv
+japronx.net
+japronx.vip
+keyword:japonx
+keyword:japronx
+
+# > JOOX
+joox.com
+keyword:joox
+keyword:jooxweb-api
+
+# > KKTV
+kktv.me
+kktv.com.tw
+full:kktv-theater.kk.stream
+  
+# > Letv
+full:api.mob.app.letv.com
+
+# > Line TV
+linetv.tw
+full:profile.line-scdn.net
+full:d3c7rimkq79yfu.cloudfront.net
+  
+# > myTV_SUPER
+mytvsuper.com
+tvb.com
+  
+# > Netease Music
+music.126.net
+full:api.iplay.163.com
+full:hz.netease.com
+full:mam.netease.com
+full:music.163.com
+
+# > Pandora
+pandora.com
+
+# > Resso
+resso.app
+resso.com
+
+# > Anime
+neonime.co
+gomunime.is
+9anime.cz
+9anime.id
+9anime.to
+9anime.ws
+animedao-tv.com
+crunchyroll.com
+funimation.com
+gogo-load.com
+gogoanime.vc
+gogoanime.wiki
+gogocdn.net
+hidive.com
+vrv.co
+animedao-tv.com
+animekayo.com
+kayoanime.com
+9anime-tv.com
+kissanime.ru
+animedao.com
+animelab.com
+anime-planet.com
+viz.com
+animeheaven.ru
+animefreak.tv
+contv.com
+asiancrush.com
+animetake.tv
+aniplus-asia.com
+tubi.tv
+midnightpulp.com
+animebee.to
+keyword:animepahe
+keyword:gogoplay
+keyword:gogoanime
+keyword:9anime
+keyword:anoboy
+keyword:allmanga
+keyword:streamruby
+
+# > Acast
+acast.com
+
+# > Amazon Video (Additional)
+aiv-delivery.net
+pv-cdn.net
+full:atv-ext-eu.amazon.com
+full:atv-ext-fe.amazon.com
+full:atv-ext.amazon.com
+full:atv-ps-eu.amazon.co.uk
+full:atv-ps-eu.amazon.com
+full:atv-ps-fe.amazon.co.jp
+full:atv-ps-fe.amazon.com
+full:atv-ps.amazon.com
+
+# > Crave
+9c9media.ca
+9c9media.com
+crave.ca
+
+# > Dailymotion
+dai.ly
+dailymotion.com
+dailymotionadvertising.com
+dmcdn.net
+dmxleo.com
+
+# > Deezer
+deezer.com
+dzcdn.net
+full:e28200.a.akamaiedge.net
+
+# > FuboTV
+fubo.tv
+
+# > Hotdog radio
+hotdogradio.com
+
+# > IheartRadio
+937theriver.com
+iheart.com
+iheart.mx
+iheartmedia.com
+iheartradio.ca
+iheartradio.co.nz
+iheartradio.com
+ihrdev.com
+ihrhls.com
+ihrint.com
+ihrstage.com
+
+# > IQiyi (Additional)
+iq.com
+ppstream.com
+
+# > LastFM
+last.fm
+
+# > OCS
+ocs.fr
+ocsdomain.com
+
+# > Pandora
+p-cdn.com
+p-cdn.us
+pandora.com
+savagebeast.com
+
+# > Peacock TV
+peacock.com
+peacocktv.com
+
+# > Plex
+plex.bz
+plex.direct
+plex.tv
+plexapp.com
+
+# > SomaFM
+somafm.com
+
+# > Streamable
+streamable.com
+
+# > Trebel
+trebel.io
+projectcarmen.com
+
+# > Tubi
+adrise.tv
+tubi.io
+tubi.video
+tubitv.com
+
+# > TuneIn
+radiotime.com
+tunein.com
+tunenet.io
+
+# > Twitch TV (Additional)
+live-video.net
+full:twitch.okta.com
+
+# > Vevo
+vevo.com
+vevodev.com
+vevoprd.com
+vevostg.com
+
+# > VRV
+vrv.co
+
+# > Vudu
+vudu.com
+
+# > Bigo TV
+bigo.sg
+bigo.tv
+cube.tv
+hzmk.site
+like.video
+likeevideo.com
+keyword:likee

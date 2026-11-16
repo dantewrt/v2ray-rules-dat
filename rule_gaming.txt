@@ -1,0 +1,342 @@
+include:category-games
+include:discord
+include:netease
+include:nvidia
+
+# Mobile Legends
+mobilelegends.com
+mobilelegends.ca
+mobilelegends.cn
+mobilelegends.co.kr
+mobilelegends.info
+mobilelegends.kr
+mobilelegends.net
+mobilelegends.org
+mobilelegends.com.cn
+youngjoygame.com
+yuanzhanapp.com
+aihelp.net
+
+# FreeFire
+freefiremobile.com
+keyword:freefire
+keyword:ffmax
+
+# PUBG
+pubgmobile.com
+igamecj.com
+broker.amsoveasea.com
+gjacky.com
+full:sg.tdatamaster.com
+full:file-igamecj.akamaized.net
+full:tencentgames.helpshift.com
+keyword:igamecj
+
+# Roblox
+roblox.com
+rbxcdn.com
+rbxtrk.com
+roblox.plus
+full:robloxinc.s.llnwi.net
+full:6850.f.akamaiedge.net
+full:roblox.ssl.zendesk.com
+  
+# > Agar
+agar.io
+
+# > Ark
+arkdedicated.com
+playark.com
+
+# > BigFishGames
+bigfishgames.com
+
+# > Biligame
+biligame.net
+bilibiligame.net
+
+# > CoD
+callofduty.com
+callofdutyleague.com
+
+# > Candy Crush
+full:candycrush.king.com
+full:candycrush4.king.com
+full:candycrushsoda.king.com
+full:candycrushsodamobile.king.com
+
+# > CoC
+clashofclans.com
+
+# > Clash Royal
+clashroyale.com
+clashroyaleapp.com
+
+# > Cpmstar
+cpmstar.com
+
+# > Erolabs
+ebuajk.com
+ecchi.xxx
+ero-labs.com
+hyenadata.net
+jjaxa.co
+uquqp.net
+
+# > FIFA (Electronic Arts)
+content.easports.com
+service.easports.com
+full:fifa-online.easports.com
+full:fifa.stats.gameservices.ea.com
+keyword:-prod-gen4-app-
+keyword:-prd-mp-blaze-
+keyword:fifa23
+
+# > Forge of Empires
+forgeofempires.com
+
+# > Garena (Support)
+full:sg.voice.gcloudcs.com
+full:vn.voice.gcloudcs.com
+full:sg.itopsdk.com
+full:itop.qq.com
+keyword:gcloudcs
+keyword:gcloudsdk
+keyword:nagcloudcs
+
+# > Gameloft
+gameloft.com
+
+# > HayDay Game
+haydaygame.com
+
+# > King Games
+king.com
+midasplayer.com
+
+# > Level Infinite (Tencent)
+anticheatexpert.com
+dl.listdl.com
+intlgame.com
+intlgame.cn
+gcloudcs.com
+myqcloud.com
+keyword:anticheatexpert
+keyword:gcloud
+keyword:myqcloud
+
+# > Kuro Games
+kurogames.com
+kurogame.net
+kurogame.xyz
+kurogame-service.com
+
+# > Microsoft Games
+microsoftcasualgames.com
+msgamestudios.com
+
+# > MiHoYo / Hoyoverse / Cognosphere
+hoyoverse.com
+hoyolab.com
+n0vadesktop.com
+full:hoyo.link
+
+# > Minecraft
+minecraft-services.net
+minecraft.net
+minecraftservices.com
+mojang.com
+full:minecraftprod.rtep.msgamestudios.com
+
+# > Miniclip
+miniclip.com
+
+# > Mixer
+mixer.com
+
+# > Netease (Additional)
+easebar.com
+easefoo.com
+neteasegames.com
+neteasegames.net
+neteasegame.com
+neteasegame.net
+keyword:easebar
+keyword:netease
+
+# > Playrix
+playrix.com
+full:playrix.helpshift.com
+
+# > Pokemon Go
+nianticlabs.com
+pokemongolive.com
+full:niantic.helpshift.com
+
+# > Punishing Gray Raven
+full:pgr.kurogame.net
+
+# > Supercell
+supercell.com
+supercell.net
+full:supercell.helpshift.com
+
+# > Take2Games
+take2games.com
+
+# > TapTap
+tap.io
+taptap.io
+tapapis.cn
+tapapis.com
+keyword:tapapis
+
+# > Unity3d
+unity3d.com
+
+# > War Gaming
+wargaming.com
+wargaming.net
+worldoftanks.com
+
+# > XD
+xd.com
+t3.xd.com
+xindong.com
+keyword:matchserver
+
+# > X.D. Global
+xdg.com
+
+# > Yongshi Games
+yongshigame.com
+
+# > YoStar
+yo-star.com
+yostar.store
+yostarplat.com
+keyword:yostar
+
+# > Zynga
+zynga.com
+zynga.my
+zyngagames.com
+zyngapoker.com
+full:zyngasupport.helpshift.com
+
+# > Bleach ES
+vsplay.com
+efun.com
+efunen.com
+
+# > Apex Legends Mobile
+mgapex.com
+devmgapex.com
+awsglobalaccelerator.com
+keyword:mgapex
+keyword:devmgapex
+
+# > Konami
+konami.net
+konamionline.com
+konami-efootball.com
+applilink.jp
+keyword:konami
+keyword:efootball
+
+# > Growtopia
+growtopia1.com
+growtopia2.com
+growtopiagame.com
+keyword:growtopia
+
+# > Arknights (com.YoStarEN.Arknights)
+arknights.global
+
+# > Stumble Guys (com.kitkagames.fallbuddies)
+kitkagames.com
+stumbleguys.com
+exitgames.com
+
+# > PointBlank PC
+pointblank.id
+zepetto.com
+
+# > Idol Party
+changwutuan.com
+170u.com
+
+# > Tower of Fantasy (com.levelinfinite.hotta.gp)
+toweroffantasy-global.com
+centauriglobal.com
+api.globalgme.com
+
+# > Auto Chess (com.dragonest.autochess.google)
+dragonest.com
+yeshen.com
+xingzheai.cn
+
+# > CoDM (com.garena.game.codm)
+codm.garena.com
+connect.garena.com
+msdk.garena.com
+gxx.garenanow.com
+full:cdn.wetest.qq.com
+full:hsg.tdm.qq.com
+keyword:codm
+
+# > Arena of Valor (com.garena.game.kgid)
+kg.garena.co.id
+midas.garena.co.id
+iegg.garena.com
+cros.garena.com
+kgid.garenanow.com
+live.qcloud.com
+full:cloud2.gsdk.proximabeta.com
+keyword:kgid
+keyword:aovtv
+
+# > Honor of Kings (com.levelinfinite.sgameGlobal)
+honorofkings.com
+iegcom.com
+i.gtimg.cn
+sgameglobal.com
+singaporepaya.com
+smoba.qq.com
+full:atm-broker-tcp-hok.vasdgame.com
+full:dlied5.qq.com
+full:r.sdaswq.com
+keyword:hok
+keyword:globalconnetct
+keyword:sgameglobal
+
+# > RPG Toram Online (com.asobimo.toramonline)
+asobimo.com
+toram.jp
+full:toram-jp.akamaized.net
+keyword:asb
+keyword:asbpush
+keyword:asobimo
+keyword:iruna
+keyword:toram
+
+# > Aether Gazer (com.YoStar.AetherGazer)
+aethergazer.com
+
+# > Wuthering Waves (com.kurogame.wutheringwaves.global)
+full:wutheringwaves.kurogames.com
+aki-game.net
+
+# > Dragon Nest: Rebirth of Legend (com.lulingame.dncbt.gp)
+latale.tw
+lulingame.com
+titan-game.com
+full:report.3975ad.com
+keyword:lulingame
+
+# > Dragon Nest World (com.shengqugames.wod.bilibili)
+ovscdns.com
+sdo.com
+sdoprofile.com
+zjshulong.com
+full:au.rwt.hjy1314.com

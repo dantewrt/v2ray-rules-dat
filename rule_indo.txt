@@ -1,0 +1,202 @@
+include:catchplay
+include:disney
+include:hbo
+include:hotstar
+include:netflix
+include:spotify
+include:viu
+
+# > Bein Sport
+beinsports.com
+beiniz.biz
+full:connect-id.beinsports.com
+keyword:bein
+
+# > DensTV
+dens.tv
+
+# > Eraspace
+eraspace.com
+
+# > LiveTV GO
+full:livetvgo.my.id
+keyword:livetvgo
+
+# > Loklok
+loklok.plus
+
+# > MNC Now
+mncnow.id
+mncplay.id
+keyword:mnc
+
+# > Mola TV
+mola.tv
+cdn.mola.tv
+full:vod.cdn.mola.tv.akamaized.net
+full:api.sent.tv
+full:mola01.koicdn.com
+keyword:mola
+
+# > Oxygen ID
+oxygen.id
+
+# > RCTI+
+mncplus.id
+rctiplus.com
+rctiplus.id
+rcti.plus
+roov.id
+keyword:rcti
+
+# > SeulangaTV
+seulangatv.com
+keyword:seulanga
+
+# > TRANSVISION
+cubmu.com
+transvision.co.id
+keyword:transvision
+
+# > UseeTV + IndiHome + MAXStream
+useetv.com
+indihometv.com
+useetvgo.com
+keyword:useetv
+keyword:telkomsel
+
+# > Vision+
+visionplus.id
+rmp-data.com
+full:stream-cdn.mncnow.id
+full:dtaarjaj1diy9.cloudfront.net
+full:mrpw.ptmnc01.verspective.net
+keyword:visionplus
+
+# > Vidio
+vidio.com
+prod.vidiocdn.com
+secureswiftcontent.com
+full:license-global.pallycon.com
+full:media-vidio-com.akamaized.net
+full:etslive-2-vidio-com.akamaized.net
+full:token-media-vidio-com.akamaized.net
+full:static-web-prod-vidio.akamaized.net
+full:geo-id-media-vidio-com.akamaized.net
+full:geo-id-tl-media-vidio-com.akamaized.net
+full:static-playback-vidio-com.akamaized.net
+full:live-production.secureswiftcontent.com
+keyword:vidio-bein
+keyword:vidio
+
+# > BILIBILI
+biliapi.com
+biliapi.net
+bilibili.com
+bilibili.tv
+biliintl.com
+bilibilicomics.com
+bilivideo.com
+bilivideo.net
+bstarstatic.com
+full:s-bstarstatic.akamaized.net
+full:pic-bstarstatic.akamaized.net
+full:upos-hz-mirrorakam.akamaized.net
+full:upos-bstar1-mirrorakam.akamaized.net
+keyword:bstar
+
+# > Disney Plus + Hotstar (Additional)
+starott.com
+full:disneyplus.disney.co.jp
+
+# > VIU
+viu.com
+viu.tv
+viuapi.io
+full:viu-static.akamaized.net
+full:gcpvuclip-a.akamaihd.net
+full:vuclip-eip2.akamaized.net
+full:vuclipi-a.akamaihd.net
+keyword:viu
+keyword:vuclip
+
+# > WeTV
+iflix.com
+wetv.vip
+wetvinfo.com
+tc.qq.com
+v.smtcdns.com
+v.smtcdns.net
+full:wetvdefaultts.tc.qq.com
+full:webrtcpunch.video.qq.com
+full:apd-vlive.apdcdn.tc.qq.com
+full:iflix-images.akamaized.net
+keyword:wetv
+
+# > Xiaomi TV+
+full:id.tv.global.mi.com
+
+#Philips Wiz Smart Gateway
+wiz.world
+wizconnected.com
+full:wizconnected.helpshift.com
+
+# > MARKET PLACE
+tokopedia.com
+shopee.co.id
+shopeemobile.com
+bukalapak.com
+lazada.co.id
+blibli.com
+orami.co.id
+ralali.com
+bhinneka.com
+zalora.co.id
+keyword:tokopedia
+keyword:shopee
+keyword:bukalapak
+keyword:lazada
+keyword:blibli
+keyword:orami
+keyword:ralali
+keyword:bhinneka
+keyword:zalora
+
+# E-Wallet / Dompet Digital
+gojek.com
+gobiz.co.id
+ovo.id
+dana.id
+linkaja.id
+octoclicks.co.id
+i-saku.com
+doku.com
+shopeepay.co.id
+grab.com
+grabtaxi.com
+keyword:gojek
+keyword:gobiz
+keyword:ovo
+keyword:dana
+keyword:linkaja
+keyword:octoclicks
+keyword:i-saku
+keyword:doku
+keyword:shopeepay
+keyword:grab
+keyword:grabtaxi
+
+# > LIST Domain tLD Indo & GEOIP INDO
+id
+co.id
+ac.id
+or.id
+go.id
+my.id
+web.id
+biz.id
+net.id
+mil.id
+sch.id
+desa.id
+ponpes.id
