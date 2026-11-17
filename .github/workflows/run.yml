@@ -49,7 +49,11 @@ jobs:
           echo "URLTEST=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/urltest.txt" >> $GITHUB_ENV
           echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_speedtest.txt" >> $GITHUB_ENV
           echo "RULE_BANK_ID=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
-          echo "RULE_ECOMMERCE=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ecommerce.txt" >> $GITHUB_ENV
+          echo "RULE_ECOMMERCE=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ecommerce.txt" >> $GITHUB_ENV 
+          echo "OISD_FULL=https://big.oisd.nl/dnsmasq" >> $GITHUB_ENV
+          echo "OISD_SMALL=https://small.oisd.nl/dnsmasq" >> $GITHUB_ENV
+          echo "RULE_ADS=https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt" >> $GITHUB_ENV
+          echo "RULE_ADS_EXTENDED=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ads.txt" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout the "hidden" branch of this repo
@@ -194,6 +198,12 @@ jobs:
           curl -L --retry 3 --fail-with-body "$URLTEST" | tr -d '\r' | tee ./community/data/urltest > urltest.txt
           curl -L --retry 3 --fail-with-body "$RULE_BANK_ID" | tr -d '\r' | tee ./community/data/bank-id > bank-id.txt
           curl -L --retry 3 --fail-with-body "$RULE_ECOMMERCE" | tr -d '\r' | tee ./community/data/ecommerce-id > ecommerce-id.txt
+          curl -L --retry 3 --fail-with-body "$MALICIOUS_HOST" | tr -d '\r' | tee ./community/data/rule-malicious > rule-malicious.txt
+          curl -L --retry 3 --fail-with-body "$OISD_FULL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' | sort --ignore-case -u | tee ./community/data/oisd-full > oisd-full.txt
+          curl -L --retry 3 --fail-with-body "$RULE_ADS" | grep "0.0.0.0" | awk '{print $2}' > ./community/data/rule-ads
+          curl -L --retry 3 --fail-with-body "$RULE_ADS_EXTENDED" | tr -d '\r' >> ./community/data/rule-ads
+          sort --ignore-case -u ./community/data/rule-ads -o ./community/data/rule-ads
+cp ./community/data/rule-ads rule-ads.txt
 
       - name: Build geosite.dat file
         run: |
