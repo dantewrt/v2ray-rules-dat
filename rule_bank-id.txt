@@ -46,6 +46,7 @@ banksampoerna.com
 banksaudara.com
 banksinarmas.co.id
 banksulsel.co.id
+banksulteng.co.id
 banksultra.co.id
 banksulutgo.co.id
 banksumselbabel.com
@@ -104,7 +105,6 @@ sbiindo.com
 seabank.co.id
 shinhan.co.id
 standardchartered.com
-sulteng.go.id
 superbank.id
 uob.co.id
 victoriabank.co.id
