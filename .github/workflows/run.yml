@@ -55,8 +55,6 @@ jobs:
           echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_speedtest.txt" >> $GITHUB_ENV
           echo "RULE_BANK_ID=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
           echo "RULE_ECOMMERCE=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ecommerce.txt" >> $GITHUB_ENV
-          echo "RULE_ADS=https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt" >> $GITHUB_ENV
-          echo "RULE_ADS_EXTENDED=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ads.txt" >> $GITHUB_ENV
           echo "OISD_FULL=https://big.oisd.nl/dnsmasq" >> $GITHUB_ENV
         shell: bash
 
