@@ -40,7 +40,7 @@ roblox.plus
 full:robloxinc.s.llnwi.net
 full:6850.f.akamaiedge.net
 full:roblox.ssl.zendesk.com
-  
+
 # > Agar
 agar.io
 
@@ -306,15 +306,13 @@ smoba.qq.com
 full:atm-broker-tcp-hok.vasdgame.com
 full:dlied5.qq.com
 full:r.sdaswq.com
-keyword:hok
-keyword:globalconnetct
+keyword:globalconnect
 keyword:sgameglobal
 
 # > RPG Toram Online (com.asobimo.toramonline)
 asobimo.com
 toram.jp
 full:toram-jp.akamaized.net
-keyword:asb
 keyword:asbpush
 keyword:asobimo
 keyword:iruna
