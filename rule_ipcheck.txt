@@ -40,7 +40,6 @@ geoplugin.net
 fraudguard.io
 infobip.com
 ip.sb
-ipstack.com
 positionstack.com
 maxmind.com
 ipregistry.co
@@ -57,11 +56,8 @@ whoer.net
 ipv6-test.com
 dnsleaktest.com
 pingtools.org
-taobao.com
 ttt.sh
 skk.moe
-ds.metric.gstatic.com
-v4.metric.gstatic.com
 ip.gs
 iplocation.net
 showmyip.com
