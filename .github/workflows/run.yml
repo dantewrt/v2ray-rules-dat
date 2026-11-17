@@ -198,9 +198,11 @@ jobs:
           curl -L --retry 3 --fail-with-body "$RULE_BANK_ID" | tr -d '\r' | tee ./community/data/bank-id > bank-id.txt
           curl -L --retry 3 --fail-with-body "$RULE_ECOMMERCE" | tr -d '\r' | tee ./community/data/ecommerce-id > ecommerce-id.txt
           curl -L --retry 3 --fail-with-body "$MALICIOUS_HOST" | tr -d '\r' | tee ./community/data/rule-malicious > rule-malicious.txt
-          curl -L --retry 3 --fail-with-body "$OISD_FULL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' | sort --ignore-case -u | tee ./community/data/oisd-full > oisd-full.txt
+          curl -L --retry 3 --fail-with-body "$OISD_FULL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' | tee ./community/data/oisd-full > oisd-full.txt
           curl -L --retry 3 --fail-with-body "$RULE_ADS" | grep "0.0.0.0" | awk '{print $2}' > ./community/data/rule-ads
           curl -L --retry 3 --fail-with-body "$RULE_ADS_EXTENDED" | tr -d '\r' >> ./community/data/rule-ads
+          cp ./community/data/rule-ads rule-ads.txt
+
 
       - name: Build geosite.dat file
         run: |
