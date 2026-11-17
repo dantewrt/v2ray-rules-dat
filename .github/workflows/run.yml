@@ -182,18 +182,18 @@ jobs:
           curl -L --retry 3 --fail-with-body "$WIN_UPDATE" | grep "0.0.0.0" | awk '{print $2}' > win-update.txt
           curl -L --retry 3 --fail-with-body "$WIN_EXTRA" | grep "0.0.0.0" | awk '{print $2}' > ./community/data/win-extra
           curl -L --retry 3 --fail-with-body "$WIN_EXTRA" | grep "0.0.0.0" | awk '{print $2}' > win-extra.txt
-curl -L --retry 3 --fail-with-body "$RULE_GAME" | tr -d '\r' | tee ./community/data/rule-gaming > rule-gaming.txt
-curl -L --retry 3 --fail-with-body "$RULE_INDO" | tr -d '\r' | tee ./community/data/rule-indo > rule-indo.txt
-curl -L --retry 3 --fail-with-body "$RULE_PS" | tr -d '\r' | tee ./community/data/rule-playstore > rule-playstore.txt
-curl -L --retry 3 --fail-with-body "$RULE_SOSMED" | tr -d '\r' | tee ./community/data/rule-sosmed > rule-sosmed.txt
-curl -L --retry 3 --fail-with-body "$RULE_STREAMING" | tr -d '\r' | tee ./community/data/rule-streaming > rule-streaming.txt
-curl -L --retry 3 --fail-with-body "$RULE_SPEEDTEST" | tr -d '\r' | tee ./community/data/rule-speedtest > rule-speedtest.txt
-curl -L --retry 3 --fail-with-body "$RULE_UMUM" | tr -d '\r' | tee ./community/data/rule-umum > rule-umum.txt
-curl -L --retry 3 --fail-with-body "$RULE_IPCHECK" | tr -d '\r' | tee ./community/data/rule-ipcheck > rule-ipcheck.txt
-curl -L --retry 3 --fail-with-body "$RULE_VIDCONFERENCE" | tr -d '\r' | tee ./community/data/videoconference > videoconference.txt
-curl -L --retry 3 --fail-with-body "$URLTEST" | tr -d '\r' | tee ./community/data/urltest > urltest.txt
-curl -L --retry 3 --fail-with-body "$RULE_BANK_ID" | tr -d '\r' | tee ./community/data/bank-id > bank-id.txt
-curl -L --retry 3 --fail-with-body "$RULE_ECOMMERCE" | tr -d '\r' | tee ./community/data/ecommerce-id > ecommerce-id.txt
+          curl -L --retry 3 --fail-with-body "$RULE_GAME" | tr -d '\r' | tee ./community/data/rule-gaming > rule-gaming.txt
+          curl -L --retry 3 --fail-with-body "$RULE_INDO" | tr -d '\r' | tee ./community/data/rule-indo > rule-indo.txt
+          curl -L --retry 3 --fail-with-body "$RULE_PS" | tr -d '\r' | tee ./community/data/rule-playstore > rule-playstore.txt
+          curl -L --retry 3 --fail-with-body "$RULE_SOSMED" | tr -d '\r' | tee ./community/data/rule-sosmed > rule-sosmed.txt
+          curl -L --retry 3 --fail-with-body "$RULE_STREAMING" | tr -d '\r' | tee ./community/data/rule-streaming > rule-streaming.txt
+          curl -L --retry 3 --fail-with-body "$RULE_SPEEDTEST" | tr -d '\r' | tee ./community/data/rule-speedtest > rule-speedtest.txt
+          curl -L --retry 3 --fail-with-body "$RULE_UMUM" | tr -d '\r' | tee ./community/data/rule-umum > rule-umum.txt
+          curl -L --retry 3 --fail-with-body "$RULE_IPCHECK" | tr -d '\r' | tee ./community/data/rule-ipcheck > rule-ipcheck.txt
+          curl -L --retry 3 --fail-with-body "$RULE_VIDCONFERENCE" | tr -d '\r' | tee ./community/data/videoconference > videoconference.txt
+          curl -L --retry 3 --fail-with-body "$URLTEST" | tr -d '\r' | tee ./community/data/urltest > urltest.txt
+          curl -L --retry 3 --fail-with-body "$RULE_BANK_ID" | tr -d '\r' | tee ./community/data/bank-id > bank-id.txt
+          curl -L --retry 3 --fail-with-body "$RULE_ECOMMERCE" | tr -d '\r' | tee ./community/data/ecommerce-id > ecommerce-id.txt
 
       - name: Build geosite.dat file
         run: |
