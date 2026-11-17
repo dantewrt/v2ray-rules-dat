@@ -56,6 +56,8 @@ jobs:
           echo "RULE_BANK_ID=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
           echo "RULE_ECOMMERCE=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ecommerce.txt" >> $GITHUB_ENV
           echo "OISD_FULL=https://big.oisd.nl/dnsmasq" >> $GITHUB_ENV
+          echo "RULE_ADS=https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt" >> $GITHUB_ENV
+          echo "RULE_ADS_EXTENDED=https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule_ads.txt" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout the "hidden" branch of this repo
@@ -119,7 +121,7 @@ jobs:
             cat reject-reserve.txt >> ./community/data/category-ads-all
           fi
 
-      - name: Empty China-specific lists and create telemetry & custom Indonesia lists
+      - name: Empty China-specific lists and create telemetry, adblock & custom Indonesia lists
         run: |
           # Kosongkan daftar khusus China agar tidak ikut terkompilasi tanpa merusak referensi internal v2fly
           for cn_file in cn geolocation-\!cn china-list google-cn apple-cn gfw greatfire; do
@@ -145,8 +147,10 @@ jobs:
           curl -L --retry 3 --fail-with-body "$RULE_BANK_ID" | tr -d '\r' > ./community/data/bank-id
           curl -L --retry 3 --fail-with-body "$RULE_ECOMMERCE" | tr -d '\r' > ./community/data/ecommerce-id
 
-          # Daftar pemblokiran iklan tambahan
-          curl -L --retry 3 --fail-with-body "$OISD_FULL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' | tee ./community/data/oisd-full > oisd-full.txt
+          # Daftar pemblokiran iklan (oisd-full + rule-ads + rule-ads-extended)
+          curl -L --retry 3 --fail-with-body "$OISD_FULL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/oisd-full
+          curl -L --retry 3 --fail-with-body "$RULE_ADS" | grep "0.0.0.0" | awk '{print $2}' > ./community/data/rule-ads
+          (curl -L --retry 3 --fail-with-body "$RULE_ADS_EXTENDED" || curl -L --retry 3 --fail-with-body "https://raw.githubusercontent.com/dantewrt/v2ray-rules-dat/rule/rule-ads.txt") | tr -d '\r' >> ./community/data/rule-ads
 
       - name: Build geosite.dat file
         run: |
