@@ -1,20 +1,20 @@
 name: Build V2Ray rules dat files
-
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 21 * * FRI"
+    - cron: "0 22 * * *"
   push:
     branches:
       - master
-      - rule
-      - hidden
     paths-ignore:
       - "**/README.md"
-
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - "**/README.md"
 permissions:
   contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -38,20 +38,12 @@ jobs:
           echo "WIN_SPY=https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt" >> $GITHUB_ENV
           echo "WIN_UPDATE=https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/update.txt" >> $GITHUB_ENV
           echo "WIN_EXTRA=https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/extra.txt" >> $GITHUB_ENV
-          echo "DOH_DNS=https://raw.githubusercontent.com/dibdot/DoH-IP-blocklists/master/doh-domains.txt" >> $GITHUB_ENV
-          echo "RULE_ADS=https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt" >> $GITHUB_ENV
-          echo "MALICIOUS_HOST=https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_light.txt" >> $GITHUB_ENV
+        shell: bash
 
       - name: Checkout the "hidden" branch of this repo
         uses: actions/checkout@v7
         with:
           ref: hidden
-
-      - name: Checkout custom rules from "rule" branch
-        uses: actions/checkout@v7
-        with:
-          ref: rule
-          path: my-rules
 
       - name: Checkout Loyalsoldier/domain-list-custom
         uses: actions/checkout@v7
@@ -79,8 +71,8 @@ jobs:
 
       - name: Get geoip.dat related files
         run: |
-          curl -fsSL --retry 3 -O https://github.com/malikshi/geoip/raw/release/geoip.dat
-          curl -fsSL --retry 3 -O https://github.com/malikshi/geoip/raw/release/geoip.dat.sha256sum
+          wget https://github.com/Loyalsoldier/geoip/raw/release/geoip.dat
+          wget https://github.com/Loyalsoldier/geoip/raw/release/geoip.dat.sha256sum
 
       - name: Generate GFWList domains
         run: |
@@ -88,60 +80,63 @@ jobs:
           chmod +x ./gfwlist2dnsmasq.sh
           ./gfwlist2dnsmasq.sh -l -o ./temp-gfwlist.txt
 
-      - name: Get and add direct, proxy, and reject domains (Loyalsoldier Core)
+      - name: Get and add direct domains into temp-direct.txt file
         run: |
-          # 1. Direct domains
           curl -L --retry 3 --fail-with-body "$CHINA_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > temp-direct.txt
           curl -L --retry 3 --fail-with-body "$CUSTOM_DIRECT" | perl -ne '/^(domain):([^:]+)(\n$|:@.+)/ && print "$2\n"' >> temp-direct.txt
 
-          # 2. Proxy domains
+      - name: Get and add proxy domains into temp-proxy.txt file
+        run: |
           cat ./gfwlist2dnsmasq/temp-gfwlist.txt | perl -ne '/^((?=^.{3,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})+)/ && print "$1\n"' > temp-proxy.txt
           curl -L --retry 3 --fail-with-body "$GOOGLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' >> temp-proxy.txt
           curl -L --retry 3 --fail-with-body "$APPLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' >> temp-proxy.txt
           curl -L --retry 3 --fail-with-body "$CUSTOM_PROXY" | perl -ne 'next if /:\@cn/; /^(domain):([^:]+)(\n$|:@.+)/ && print "$2\n"' >> temp-proxy.txt
 
-          # 3. Reject domains
+      - name: Get and add reject domains into temp-reject.txt file
+        run: |
           curl -L --retry 3 --fail-with-body "$EASYLISTCHINA_EASYLIST_REJECT_URL" | perl -ne '/^\|\|([-_0-9a-zA-Z]+(\.[-_0-9a-zA-Z]+){1,64})\^$/ && print "$1\n"' | perl -ne 'print if not /^[0-9]{1,3}(\.[0-9]{1,3}){3}$/' > temp-reject.txt
           curl -L --retry 3 --fail-with-body "$ADGUARD_DNS_REJECT_URL" | perl -ne '/^\|\|([-_0-9a-zA-Z]+(\.[-_0-9a-zA-Z]+){1,64})\^$/ && print "$1\n"' | perl -ne 'print if not /^[0-9]{1,3}(\.[0-9]{1,3}){3}$/' >> temp-reject.txt
           curl -L --retry 3 --fail-with-body "$PETERLOWE_REJECT_URL" | perl -ne '/^127\.0\.0\.1\s([-_0-9a-zA-Z]+(\.[-_0-9a-zA-Z]+){1,64})$/ && print "$1\n"' >> temp-reject.txt
           curl -L --retry 3 --fail-with-body "$DANPOLLOCK_REJECT_URL" | perl -ne '/^127\.0\.0\.1\s([-_0-9a-zA-Z]+(\.[-_0-9a-zA-Z]+){1,64})/ && print "$1\n"' | sed '1d' >> temp-reject.txt
 
-          # 4. Reserve full/regexp/keyword rules
+      - name: Reserve `full`, `regexp` and `keyword` type of rules from custom lists to "reserve" files
+        run: |
           curl -L --retry 3 --fail-with-body "$CUSTOM_DIRECT" | perl -ne '/^((full|regexp|keyword):[^:]+)(\n$|:@.+)/ && print "$1\n"' | sort --ignore-case -u > direct-reserve.txt
           curl -L --retry 3 --fail-with-body "$CUSTOM_PROXY" | perl -ne 'next if /:\@cn/; /^((full|regexp|keyword):[^:]+)(\n$|:@.+)/ && print "$1\n"' | sort --ignore-case -u > proxy-reserve.txt
 
-          # 5. Gabungkan file dari branch "hidden"
-          for f in proxy.txt direct.txt reject.txt direct-need-to-remove.txt proxy-need-to-remove.txt reject-need-to-remove.txt; do
-            [ ! -f "$f" ] && touch "$f"
-          done
+      - name: Add proxy, direct and reject domains from "hidden" branch to appropriate temp files
+        run: |
           cat proxy.txt >> temp-proxy.txt
           cat direct.txt >> temp-direct.txt
           cat reject.txt >> temp-reject.txt
 
-      - name: Deduplicate and write Loyalsoldier core lists
+      - name: Sort and generate redundant lists
         run: |
           cat temp-proxy.txt | sort --ignore-case -u > proxy-list-with-redundant
           cat temp-direct.txt | sort --ignore-case -u > direct-list-with-redundant
           cat temp-reject.txt | sort --ignore-case -u > reject-list-with-redundant
 
-          if [ -f "findRedundantDomain.py" ]; then
-            python3 ./findRedundantDomain.py ./direct-list-with-redundant ./direct-list-deleted-unsort
-            python3 ./findRedundantDomain.py ./proxy-list-with-redundant ./proxy-list-deleted-unsort
-            python3 ./findRedundantDomain.py ./reject-list-with-redundant ./reject-list-deleted-unsort
-          fi
-
-          for f in direct-list-deleted-unsort proxy-list-deleted-unsort reject-list-deleted-unsort; do
-            [ ! -f "$f" ] && touch "$f"
-          done
-
+      - name: Remove redundant domains
+        run: |
+          chmod +x findRedundantDomain.py
+          ./findRedundantDomain.py ./direct-list-with-redundant ./direct-list-deleted-unsort
+          ./findRedundantDomain.py ./proxy-list-with-redundant ./proxy-list-deleted-unsort
+          ./findRedundantDomain.py ./reject-list-with-redundant ./reject-list-deleted-unsort
+          [ ! -f "direct-list-deleted-unsort" ] && touch direct-list-deleted-unsort
+          [ ! -f "proxy-list-deleted-unsort" ] && touch proxy-list-deleted-unsort
+          [ ! -f "reject-list-deleted-unsort" ] && touch reject-list-deleted-unsort
           grep -Fvxif ./direct-list-deleted-unsort ./direct-list-with-redundant > ./direct-list-without-redundant || [ "$?" -eq 1 ]
           grep -Fvxif ./proxy-list-deleted-unsort ./proxy-list-with-redundant > ./proxy-list-without-redundant || [ "$?" -eq 1 ]
           grep -Fvxif ./reject-list-deleted-unsort ./reject-list-with-redundant > ./reject-list-without-redundant || [ "$?" -eq 1 ]
 
+      - name: Remove domains from "need-to-remove" lists in "hidden" branch
+        run: |
           grep -Fvxif ./direct-need-to-remove.txt ./direct-list-without-redundant > temp-cn.txt || [ "$?" -eq 1 ]
           grep -Fvxif ./proxy-need-to-remove.txt ./proxy-list-without-redundant > temp-geolocation-\!cn.txt || [ "$?" -eq 1 ]
           grep -Fvxif ./reject-need-to-remove.txt ./reject-list-without-redundant > temp-category-ads-all.txt || [ "$?" -eq 1 ]
 
+      - name: Write lists to data directory
+        run: |
           cat temp-cn.txt | sort --ignore-case -u | perl -ne '/^((?=^.{1,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})*)/ && print "$1\n"' > ./community/data/cn
           cat temp-cn.txt | sort --ignore-case -u | perl -ne 'print if not /^((?=^.{3,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})+)/' > direct-tld-list.txt
           cat temp-geolocation-\!cn.txt | sort --ignore-case -u | perl -ne '/^((?=^.{1,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})*)/ && print "$1\n"' > ./community/data/geolocation-\!cn
@@ -149,6 +144,8 @@ jobs:
           cat temp-category-ads-all.txt | sort --ignore-case -u | perl -ne '/^((?=^.{1,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})*)/ && print "$1\n"' > ./community/data/category-ads-all
           cat temp-category-ads-all.txt | sort --ignore-case -u | perl -ne 'print if not /^((?=^.{3,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})+)/' > reject-tld-list.txt
 
+      - name: Add `full`, `regexp` and `keyword` type of rules back into "cn", "geolocation-!cn" and "category-ads-all" list
+        run: |
           [ -f "direct-reserve.txt" ] && cat direct-reserve.txt >> ./community/data/cn
           [ -f "proxy-reserve.txt" ] && cat proxy-reserve.txt >> ./community/data/geolocation-\!cn
           [ -f "reject-reserve.txt" ] && cat reject-reserve.txt >> ./community/data/category-ads-all
@@ -156,87 +153,44 @@ jobs:
           cp ./community/data/geolocation-\!cn proxy-list.txt
           cp ./community/data/category-ads-all reject-list.txt
 
-      - name: Create standard & custom lists (Loyalsoldier + Branch "rule")
+      - name: Create `china-list`、`google-cn`、`apple-cn`、`gfw`、`greatfire` lists
         run: |
-          # Daftar standar Loyalsoldier
-          curl -L --retry 3 --fail-with-body "$CHINA_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' | tee ./community/data/china-list > china-list.txt
-          curl -L --retry 3 --fail-with-body "$GOOGLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' | tee ./community/data/google-cn > google-cn.txt
-          curl -L --retry 3 --fail-with-body "$APPLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' | tee ./community/data/apple-cn > apple-cn.txt
+          curl -L --retry 3 --fail-with-body "$CHINA_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/china-list
+          curl -L --retry 3 --fail-with-body "$CHINA_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > china-list.txt
+          curl -L --retry 3 --fail-with-body "$GOOGLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > ./community/data/google-cn
+          curl -L --retry 3 --fail-with-body "$GOOGLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > google-cn.txt
+          curl -L --retry 3 --fail-with-body "$APPLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > ./community/data/apple-cn
+          curl -L --retry 3 --fail-with-body "$APPLE_DOMAINS_URL" | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > apple-cn.txt
           cat ./gfwlist2dnsmasq/temp-gfwlist.txt | perl -ne '/^((?=^.{3,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})+)/ && print "$1\n"' >> ./community/data/gfw
           cat ./community/data/gfw | sort --ignore-case -u > gfw.txt
           cat ./community/data/greatfire | sort --ignore-case -u > greatfire.txt
-          curl -L --retry 3 --fail-with-body "$WIN_SPY" | grep "0.0.0.0" | awk '{print $2}' | tee ./community/data/win-spy > win-spy.txt
-          curl -L --retry 3 --fail-with-body "$WIN_UPDATE" | grep "0.0.0.0" | awk '{print $2}' | tee ./community/data/win-update > win-update.txt
-          curl -L --retry 3 --fail-with-body "$WIN_EXTRA" | grep "0.0.0.0" | awk '{print $2}' | tee ./community/data/win-extra > win-extra.txt
-
-          # Daftar tambahan DoH + Malicious Host (tanpa OISD)
-          curl -fsSL --retry 3 "$DOH_DNS" | grep -v '^#' | grep -v '^$' | sort -u | tee ./community/data/rule-doh > rule-doh.txt || true
-          curl -fsSL --retry 3 "$MALICIOUS_HOST" | grep -v '^#' | grep -v '^$' | sort -u | tee ./community/data/rule-malicious > rule-malicious.txt || true
-
-          # Gabungkan rule-ads dari d3ward + rule_ads.txt lokal di branch rule
-          (curl -fsSL --retry 3 "$RULE_ADS" | grep "0.0.0.0" | awk '{print $2}' || true) > ./community/data/rule-ads
-          [ -f "./my-rules/rule_ads.txt" ] && cat ./my-rules/rule_ads.txt >> ./community/data/rule-ads
-          sort -u ./community/data/rule-ads -o ./community/data/rule-ads
-          cp ./community/data/rule-ads rule-ads.txt
-
-          if curl -fsSL --retry 3 "$RULE_ADS" -o d3host_raw.txt; then
-            grep "0.0.0.0 " d3host_raw.txt | sed 's/0\.0\.0\.0 //g' | sort -u > ./community/data/d3ward
-            rm -f d3host_raw.txt
-          fi
-
-          # Salin seluruh daftar domain kustom milik Anda dari branch "rule"
-          copy_local_rule() {
-            local src="./my-rules/$1"
-            if [ -f "$src" ]; then
-              cp "$src" "$2"
-              cp "$src" "$3"
-            else
-              echo "::warning::File lokal tidak ditemukan di branch rule: $1 -> dilewati"
-            fi
-          }
-
-          copy_local_rule "rule_gaming.txt" "./community/data/rule-gaming" "rule-gaming.txt"
-          copy_local_rule "rule_indo.txt" "./community/data/rule-indo" "rule-indo.txt"
-          copy_local_rule "rule_playstore.txt" "./community/data/rule-playstore" "rule-playstore.txt"
-          copy_local_rule "rule_sosmed.txt" "./community/data/rule-sosmed" "rule-sosmed.txt"
-          copy_local_rule "rule_streaming.txt" "./community/data/rule-streaming" "rule-streaming.txt"
-          copy_local_rule "rule_speedtest.txt" "./community/data/rule-speedtest" "rule-speedtest.txt"
-          copy_local_rule "rule_umum.txt" "./community/data/rule-umum" "rule-umum.txt"
-          copy_local_rule "rule_ipcheck.txt" "./community/data/rule-ipcheck" "rule-ipcheck.txt"
-          copy_local_rule "rule_videoconference.txt" "./community/data/videoconference" "videoconference.txt"
-          copy_local_rule "urltest.txt" "./community/data/urltest" "urltest.txt"
-          copy_local_rule "rule_bank-id.txt" "./community/data/bank-id" "bank-id.txt"
-          copy_local_rule "rule_ecommerce.txt" "./community/data/ecommerce-id" "ecommerce-id.txt"
+          curl -L --retry 3 --fail-with-body "$WIN_SPY" | grep "0.0.0.0" | awk '{print $2}' > ./community/data/win-spy
+          curl -L --retry 3 --fail-with-body "$WIN_SPY" | grep "0.0.0.0" | awk '{print $2}' > win-spy.txt
+          curl -L --retry 3 --fail-with-body "$WIN_UPDATE" | grep "0.0.0.0" | awk '{print $2}' > ./community/data/win-update
+          curl -L --retry 3 --fail-with-body "$WIN_UPDATE" | grep "0.0.0.0" | awk '{print $2}' > win-update.txt
+          curl -L --retry 3 --fail-with-body "$WIN_EXTRA" | grep "0.0.0.0" | awk '{print $2}' > ./community/data/win-extra
+          curl -L --retry 3 --fail-with-body "$WIN_EXTRA" | grep "0.0.0.0" | awk '{print $2}' > win-extra.txt
 
       - name: Build geosite.dat file
         run: |
-          find ./community/data -type f -exec sed -i '/^404:/d; /^</d' {} +
           cd custom || exit 1
           go run ./ --datapath=../community/data
 
       - name: Move and zip files and generate sha256 hash
         run: |
-          install -Dp ./geoip.dat ./publish/GeoIP.dat
-          install -Dp ./geoip.dat.sha256sum ./publish/GeoIP.dat.sha256sum
-          install -Dp ./custom/publish/geosite.dat ./publish/GeoSite.dat
+          install -Dp ./geoip.dat ./publish/geoip.dat
+          install -Dp ./geoip.dat.sha256sum ./publish/geoip.dat.sha256sum
+          install -Dp ./custom/publish/geosite.dat ./publish/geosite.dat
+          install -p {proxy,direct,reject}-tld-list.txt ./publish/
+          install -p {proxy,direct,reject}-list.txt ./publish/
+          install -p {china-list,apple-cn,google-cn,gfw,greatfire,win-spy,win-update,win-extra}.txt ./publish/
           cd ./publish || exit 1
-          zip Geo-files.zip GeoIP.dat GeoSite.dat
-          sha256sum GeoSite.dat > GeoSite.dat.sha256sum
-          sha256sum Geo-files.zip > Geo-files.zip.sha256sum
-
-      - name: Convert to Sing-Box geoassets
-        run: |
-          curl -fsSL --retry 3 -O https://github.com/malikshi/Notes/releases/download/v2box/v2box
-          chmod +x v2box
-          ./v2box migrate geoip -i ./publish/GeoIP.dat -o GeoIP.db
-          ./v2box migrate geosite -i ./publish/GeoSite.dat -o GeoSite.db
-          mv -f GeoIP.db ./publish/
-          mv -f GeoSite.db ./publish/
-          cd ./publish || exit 1
-          sha256sum GeoSite.db > GeoSite.db.sha256sum
-          sha256sum GeoIP.db > GeoIP.db.sha256sum
+          zip rules.zip {proxy,direct,reject}-list.txt geoip.dat geosite.dat
+          sha256sum geosite.dat > geosite.dat.sha256sum
+          sha256sum rules.zip > rules.zip.sha256sum
 
       - name: Release and upload assets
+        if: github.event_name != 'pull_request'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -246,6 +200,7 @@ jobs:
           file: ./publish/*
 
       - name: Git push assets to "release" branch
+        if: github.event_name != 'pull_request'
         run: |
           cd publish || exit 1
           git init
@@ -258,16 +213,9 @@ jobs:
           git push -f -u origin release
 
       - name: Purge jsdelivr CDN
+        if: github.event_name != 'pull_request'
         run: |
           cd publish || exit 1
           for file in $(ls); do
             curl -i "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${file}"
           done
-
-      - name: Delete Old Release
-        uses: dev-drprasad/delete-older-releases@v0.2.1
-        with:
-          repo: ${{ github.repository }}
-          keep_latest: 1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
