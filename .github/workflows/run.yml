@@ -176,6 +176,19 @@ jobs:
           file_glob: true
           file: ./publish/*
 
+      - name: Delete old releases and tags (keep latest 1)
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release list --repo "${{ github.repository }}" --limit 100 --json tagName,createdAt \
+            --jq 'sort_by(.createdAt) | reverse | .[1:][].tagName' | while read -r tag; do
+            if [ -n "$tag" ]; then
+              echo "Deleting old release and tag: $tag"
+              gh release delete "$tag" --repo "${{ github.repository }}" --yes --cleanup-tag
+            fi
+          done
+
       - name: Git push assets to "release" branch
         if: github.event_name != 'pull_request'
         run: |
