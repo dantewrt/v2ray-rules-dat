@@ -115,7 +115,9 @@ jobs:
       - name: Write reject list to data directory
         run: |
           cat temp-category-ads-all.txt | sort --ignore-case -u | perl -ne '/^((?=^.{1,255})[a-zA-Z0-9][-_a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-_a-zA-Z0-9]{0,62})*)/ && print "$1\n"' > ./community/data/category-ads-all
-          [ -f "reject-reserve.txt" ] && cat reject-reserve.txt >> ./community/data/category-ads-all
+          if [ -f "reject-reserve.txt" ]; then
+            cat reject-reserve.txt >> ./community/data/category-ads-all
+          fi
 
       - name: Empty China-specific lists and create telemetry & custom Indonesia lists
         run: |
